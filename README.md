@@ -95,3 +95,34 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+
+
+<!-- const getFontfamily = (baseFont = 'Inter', weight) => {
+  switch (weight) {
+    case '100':
+      return `${baseFont}-Thin`;
+    case '200':
+      return `${baseFont}-ExtraLight`;
+    case '300':
+      return `${baseFont}-Light`;
+    case '400':
+      return `${baseFont}-Regular`;
+    case '500':
+      return `${baseFont}-Medium`;
+    case '600':
+      return `${baseFont}-SemiBold`;
+    case '700':
+      return `${baseFont}-Bold`;
+    case '800':
+      return `${baseFont}-ExtraBold`;
+    case '900':
+      return `${baseFont}-Black`;
+    default:
+      return `${baseFont}-Regular`;
+
+  }
+};
+
+
+export default getFontfamily; -->
