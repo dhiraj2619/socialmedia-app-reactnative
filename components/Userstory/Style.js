@@ -12,12 +12,6 @@ const userstory = StyleSheet.create({
     textAlign: 'center',
     textTransform: 'capitalize',
   },
-  userImageContainer: {
-    borderColor: '#F35BAC',
-    borderWidth: 1,
-    padding: 4,
-    borderRadius: 100,
-  },
 });
 
 export default userstory;
