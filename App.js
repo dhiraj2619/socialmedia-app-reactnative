@@ -2,6 +2,7 @@ import React from 'react';
 import {
   FlatList,
   SafeAreaView,
+  ScrollView,
   Text,
   TouchableOpacity,
   View,
@@ -122,42 +123,45 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <View style={globalStyles.header}>
-        <Title title={"Let's explore"} />
-        <TouchableOpacity style={globalStyles.messageIcon}>
-          <FontAwesomeIcon icon={faEnvelope} color={'#898DAE'} size={20} />
-          <View style={globalStyles.messageContainer}>
-            <Text style={globalStyles.messageNumber}>5</Text>
-          </View>
-        </TouchableOpacity>
-      </View>
-      <View style={globalStyles.userStoryContainer}>
-        <FlatList
-          onEndReachedThreshold={0.5}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          data={userStories}
-          renderItem={({item}) => (
-            <Userstory name={item.name} profileImage={item.profileImage} />
-          )}
-        />
-      </View>
-      <View style={globalStyles.userPostContainer}>
-        <FlatList
-          data={userPosts}
-          renderItem={({item}) => (
-            <Userposts
-              profileImage={item.profileImage}
-              firstname={item.firstname}
-              lastname={item.lastname}
-              likes={item.likes}
-              comments={item.comments}
-              image={item.image}
-              location={item.location}
-            />
-          )}
-        />
-      </View>
+      <ScrollView>
+        <View style={globalStyles.header}>
+          <Title title={"Let's explore"} />
+          <TouchableOpacity style={globalStyles.messageIcon}>
+            <FontAwesomeIcon icon={faEnvelope} color={'#898DAE'} size={20} />
+            <View style={globalStyles.messageContainer}>
+              <Text style={globalStyles.messageNumber}>5</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View style={globalStyles.userStoryContainer}>
+          <FlatList
+            onEndReachedThreshold={0.5}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            data={userStories}
+            renderItem={({item}) => (
+              <Userstory name={item.name} profileImage={item.profileImage} />
+            )}
+          />
+        </View>
+        <View style={globalStyles.userPostContainer}>
+          <FlatList
+            data={userPosts}
+            renderItem={({item}) => (
+              <Userposts
+                profileImage={item.profileImage}
+                firstname={item.firstname}
+                lastname={item.lastname}
+                likes={item.likes}
+                comments={item.comments}
+                image={item.image}
+                location={item.location}
+                bookMarks={item.bookMarks}
+              />
+            )}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

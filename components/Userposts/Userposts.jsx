@@ -5,6 +5,7 @@ import Userprofileimage from '../Userprofileimage/Userprofileimage';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faEllipsisH} from '@fortawesome/free-solid-svg-icons';
 import userpostStyle from './Style';
+import {faBookmark, faComment, faHeart} from '@fortawesome/free-regular-svg-icons';
 
 const Userposts = props => {
   return (
@@ -27,9 +28,23 @@ const Userposts = props => {
         </View>
         <FontAwesomeIcon icon={faEllipsisH} color={'#79869F'} />
       </View>
-       <View>
-          <Image source={props.image}/>
-       </View>
+      <View style={userpostStyle.userpost}>
+        <Image source={props.image} />
+      </View>
+      <View style={userpostStyle.postuser}>
+        <View style={userpostStyle.like}>
+          <FontAwesomeIcon icon={faHeart} color={'#ccc'} />
+          <Text style={userpostStyle.userPopulate}>{props.likes}</Text>
+        </View>
+        <View style={userpostStyle.like}>
+          <FontAwesomeIcon icon={faComment} color={'#ccc'} />
+          <Text style={userpostStyle.userPopulate}>{props.comments}</Text>
+        </View>
+        <View style={userpostStyle.like}>
+          <FontAwesomeIcon icon={faBookmark} color={'#ccc'} />
+          <Text style={userpostStyle.userPopulate}>{props.bookMarks}</Text>
+        </View>
+      </View>
     </View>
   );
 };
