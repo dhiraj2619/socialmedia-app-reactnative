@@ -1,29 +1,30 @@
 import {StyleSheet} from 'react-native';
+import {horizontalScale, scaleFontSize, verticalScale} from '../../assets/styles/Scaling';
 
 const userpostStyle = StyleSheet.create({
   userMainContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    marginTop: 30,
+    marginTop: verticalScale(30),
   },
   userContainer: {flexDirection: 'row'},
-  user: {justifyContent: 'center', marginLeft: 10, gap: 5},
+  user: {justifyContent: 'center', marginLeft: horizontalScale(10), gap: 5},
   usertext: {
-    fontSize: 16,
+    fontSize: scaleFontSize(16),
     color: '#000000',
     fontWeight: '600',
     textTransform: 'capitalize',
   },
-  locationtext: {color: '#79869F', fontSize: 12},
+  locationtext: {color: '#79869F', fontSize: scaleFontSize(12)},
   userpost: {
     alignItems: 'center',
-    marginTop: 20,
-    marginBottom: 10,
+    marginTop: verticalScale(20),
+    marginBottom: verticalScale(10),
   },
   userPopulate: {
     color: '#79869F',
-    fontSize: 16,
+    fontSize: scaleFontSize(16),
   },
   like: {
     alignItems: 'center',
@@ -31,7 +32,7 @@ const userpostStyle = StyleSheet.create({
     gap: 10,
   },
   postuser: {
-    marginHorizontal: 20,
+    marginHorizontal: horizontalScale(20),
     flexDirection: 'row',
     alignItems: 'center',
     gap: 20,

@@ -13,6 +13,8 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons';
 import globalStyles from './assets/styles/globalStyle';
 import Userstory from './components/Userstory/Userstory';
 import Userposts from './components/Userposts/Userposts';
+import {scaleFontSize} from './assets/styles/Scaling';
+import {NavigationContainer} from '@react-navigation/native';
 
 const App = () => {
   const userStories = [
@@ -122,47 +124,53 @@ const App = () => {
   ];
 
   return (
-    <SafeAreaView>
-      <ScrollView>
-        <View style={globalStyles.header}>
-          <Title title={"Let's explore"} />
-          <TouchableOpacity style={globalStyles.messageIcon}>
-            <FontAwesomeIcon icon={faEnvelope} color={'#898DAE'} size={20} />
-            <View style={globalStyles.messageContainer}>
-              <Text style={globalStyles.messageNumber}>5</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
-        <View style={globalStyles.userStoryContainer}>
-          <FlatList
-            onEndReachedThreshold={0.5}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            data={userStories}
-            renderItem={({item}) => (
-              <Userstory name={item.name} profileImage={item.profileImage} />
-            )}
-          />
-        </View>
-        <View style={globalStyles.userPostContainer}>
-          <FlatList
-            data={userPosts}
-            renderItem={({item}) => (
-              <Userposts
-                profileImage={item.profileImage}
-                firstname={item.firstname}
-                lastname={item.lastname}
-                likes={item.likes}
-                comments={item.comments}
-                image={item.image}
-                location={item.location}
-                bookMarks={item.bookMarks}
+    <NavigationContainer>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={globalStyles.header}>
+            <Title title={"Let's explore"} />
+            <TouchableOpacity style={globalStyles.messageIcon}>
+              <FontAwesomeIcon
+                icon={faEnvelope}
+                color={'#898DAE'}
+                size={scaleFontSize(20)}
               />
-            )}
-          />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+              <View style={globalStyles.messageContainer}>
+                <Text style={globalStyles.messageNumber}>5</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={globalStyles.userStoryContainer}>
+            <FlatList
+              onEndReachedThreshold={0.5}
+              horizontal={true}
+              showsHorizontalScrollIndicator={false}
+              data={userStories}
+              renderItem={({item}) => (
+                <Userstory name={item.name} profileImage={item.profileImage} />
+              )}
+            />
+          </View>
+          <View style={globalStyles.userPostContainer}>
+            <FlatList
+              data={userPosts}
+              renderItem={({item}) => (
+                <Userposts
+                  profileImage={item.profileImage}
+                  firstname={item.firstname}
+                  lastname={item.lastname}
+                  likes={item.likes}
+                  comments={item.comments}
+                  image={item.image}
+                  location={item.location}
+                  bookMarks={item.bookMarks}
+                />
+              )}
+            />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 

@@ -1,14 +1,15 @@
 import {StyleSheet} from 'react-native';
+import { horizontalScale, scaleFontSize, verticalScale } from '../../assets/styles/Scaling';
 
 const userstory = StyleSheet.create({
   storyContainer: {
-    marginRight: 20,
+    marginRight: horizontalScale(20),
   },
   name: {
     fontWeight: 600,
-    fontSize: 14,
+    fontSize: scaleFontSize(16),
     color: '#22150',
-    marginTop: 8,
+    marginTop: verticalScale(8),
     textAlign: 'center',
     textTransform: 'capitalize',
   },
